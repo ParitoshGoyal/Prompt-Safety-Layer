@@ -27,11 +27,6 @@ def get_analysis():
         llm_agent_explanation = query_analysis_results["llm_analysis"]["explanation"],
         llm_agent_recommendation = query_analysis_results["llm_analysis"]["recommendation"]
     )
-    #     title=query_analysis_results["name"],
-    #     status=query_analysis_results["weather"][0]["description"].capitalize(),
-    #     temp=f"{query_analysis_results['main']['temp']:.1f}",
-    #     feels_like=f"{query_analysis_results['main']['feels_like']:.1f}"
-    # )
 
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=8000)

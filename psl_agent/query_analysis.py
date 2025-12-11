@@ -13,7 +13,6 @@ llm_model = PromptSafetyClassifier()
 # get per query analysis
 def get_query_analysis(query: str) -> dict:
     baseline_analysis = baseline_model_analysis(query)
-    #llm_analysis = llm_model_analysis(query)
 
     llm_analysis= llm_model_analysis(query) #{"classification":"unsafe"}
     return {
