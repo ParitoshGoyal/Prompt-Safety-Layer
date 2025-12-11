@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Analysis</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Query Analysis</h1>
+
+    <p>Input Query: {{ input_query}}</p>
+    <hr>
+    <p>Baseline model:- {{ baseline_model_classification }} and confidence score:- {{ baseline_model_score }}</p>
+    <hr>
+    <p>LLM agent:- {{ llm_agent_label }}, confidence score:- {{llm_agent_confidence_score}}, fallback_used:{{llm_agent_fallback_used}}
+    </p>
+    <p>explanation: {{llm_agent_explanation }}, recommendation: {{ llm_agent_recommendation }} 
+    </p>
+
+    <form action="/query_analysis">
+        <input type="text" name="query" id="query" placeholder="Enter a Query" />
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
