@@ -167,5 +167,5 @@ jobs:
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
         with: 
-          name: eval-logs5
+          name: eval-logssmall
           path: eval_logs/
