@@ -7,14 +7,15 @@ import sys
 def evaluate_models(start_count=0, end_count=100):
     errors = []
     count = 0
+    skip_count = start_count
     df_data = pd.read_csv("data/dataset.csv")
     df_test_data = df_data[df_data["fold"]=='test']
     # df_sampled = pd.read_csv('data/df_sampled_results.csv')
     for idx, row in df_test_data.iterrows():
         text = row['text']
 
-        if count < start_count: # > 0:
-            start_count -= 1
+        if count < skip_count: # > 0:
+            skip_count -= 1
             print(f"skipping processed")
             continue
 
