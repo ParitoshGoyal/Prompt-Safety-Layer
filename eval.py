@@ -46,7 +46,7 @@ def evaluate_models(start_count=0, end_count=100):
         #print("df_sampled saved to data/df_sampled_results.csv")
 
         count +=1
-        print(f"Count:{count}, idx:{idx}")
+        print(f"Count:{count}, idx:{idx}, baseline:{baseline_result}, llm_agent:{llm_result}")
 
         if end_count-start_count + 1 == count:
             break
