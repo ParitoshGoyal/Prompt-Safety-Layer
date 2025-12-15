@@ -1,2 +1,4 @@
 **/__pycache__/
 *.pyc
+errors.json
+data/df_sampled_results.csv

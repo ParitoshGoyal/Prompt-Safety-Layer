@@ -9,30 +9,6 @@ class PromptSafetyClassifier:
     
     def classify_with_llm(self, prompt: str) -> dict:
         """Ask StableLM to classify prompt safety."""
-        # query = f"""
-        # You are a safety classifier. Analyze this prompt step by step:
-        # 1. Extract risky phrases
-        # 2. Identify intent
-        # 3. Detect contradictions
-        # 4. Give safe/unsafe classification (0=safe,1=unsafe)
-
-        # Prompt: {prompt}
-
-        # Respond in JSON with:
-        # {{
-        #   "label": int,
-        #   "explanation": string
-        # }}
-        # """
-
-        # """
-        # {{
-        #   "label": int,
-        #   "score": float,
-        #   "confidence": float,
-        #   "explanation": string
-        # }}
-        # """
 
         response = self.llm(prompt, max_tokens=256, temperature=0.2, logprobs=5)
         text = response["choices"][0]["text"]
@@ -76,9 +52,15 @@ class PromptSafetyClassifier:
         """Full pipeline with fallback handling."""
         llm_result = self.classify_with_llm(prompt)
         # print("classify prompt:",(llm_result))
-        if llm_result["confidence_score"] is None or llm_result['label'] is None:
+        
+        # Add error handling for key existence
+        if "confidence_score" not in llm_result or llm_result["confidence_score"] is None:
             llm_result["confidence_score"] = 0.0
+        if "label" not in llm_result or llm_result['label'] is None:
             llm_result["label"] = 1  # default to unsafe if label or confidence not assigned by llm.
+        if "explanation" not in llm_result or llm_result["explanation"] is None:
+            llm_result["explanation"] = "Unable to generate explanation from LLM output."
+        
         if llm_result["confidence_score"] < 0.5:
             fallback_result = self.fallback(prompt=prompt)
 

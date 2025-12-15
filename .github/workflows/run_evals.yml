@@ -1,0 +1,171 @@
+name: Run Python Script
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-eval-script-0-to-500:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 0 --end_count 500
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-logs1
+          path: eval_logs/
+  
+  run-eval-script-501-to-1000:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 501 --end_count 1000
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-logs2
+          path: eval_logs/
+    
+  run-eval-script-1001-to-1500:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 1001 --end_count 1500
+      
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with: 
+          name: eval-logs3
+          path: eval_logs/
+
+  run-eval-script-1501-to-2000:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 1501 --end_count 2000
+      
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with: 
+          name: eval-logs4
+          path: eval_logs/
+
+  run-eval-script-2001-to-2100:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 2001 --end_count 2100
+      
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with: 
+          name: eval-logs5
+          path: eval_logs/
+
+
+  run-eval-script-0-to-2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run eval.py script
+        run: |
+          python eval.py --start_count 0 --end_count 2
+      
+      - name: Upload eval logs
+        uses: actions/upload-artifact@v4
+        with: 
+          name: eval-logs5
+          path: eval_logs/
