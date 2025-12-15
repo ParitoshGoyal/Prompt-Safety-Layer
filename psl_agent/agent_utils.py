@@ -26,10 +26,6 @@ def extract_info(text):
     if label_match:
         result["label"] = int(label_match.group(1))
 
-    #score_match = re.search(r'"?score"?\s*:\s*([\d.]+)', text, re.IGNORECASE)
-    #if score_match:
-    #    result["score"] = float(score_match.group(1))
-
     confidence_score = re.search(r'"?confidence_score"?\s*:\s*"?([^",\}]+)"?', text, re.IGNORECASE)
     if confidence_score:
         result["confidence_score"] = float(confidence_score.group(1))

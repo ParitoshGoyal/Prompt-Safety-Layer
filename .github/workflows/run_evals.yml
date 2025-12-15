@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  run-eval-script-0-to-500:
+  run-eval-script-0-to-400:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,14 +28,14 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 0 --end_count 500
+          python eval.py --start_count 0 --end_count 400
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
         with:
           name: eval-logs1
           path: eval_logs/
   
-  run-eval-script-501-to-1000:
+  run-eval-script-400-to-800:
     runs-on: ubuntu-latest
 
     steps:
@@ -54,14 +54,14 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 501 --end_count 1000
+          python eval.py --start_count 400 --end_count 800
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
         with:
           name: eval-logs2
           path: eval_logs/
     
-  run-eval-script-1001-to-1500:
+  run-eval-script-800-to-1200:
     runs-on: ubuntu-latest
 
     steps:
@@ -80,7 +80,7 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 1001 --end_count 1500
+          python eval.py --start_count 800 --end_count 1200
       
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
@@ -88,7 +88,7 @@ jobs:
           name: eval-logs3
           path: eval_logs/
 
-  run-eval-script-1501-to-2000:
+  run-eval-script-1200-to-1600:
     runs-on: ubuntu-latest
 
     steps:
@@ -107,7 +107,7 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 1501 --end_count 2000
+          python eval.py --start_count 1200 --end_count 1600
       
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
@@ -115,7 +115,7 @@ jobs:
           name: eval-logs4
           path: eval_logs/
 
-  run-eval-script-2001-to-2100:
+  run-eval-script-1600-to-2000:
     runs-on: ubuntu-latest
 
     steps:
@@ -134,7 +134,7 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 2001 --end_count 2100
+          python eval.py --start_count 1600 --end_count 2000
       
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
@@ -143,7 +143,7 @@ jobs:
           path: eval_logs/
 
 
-  run-eval-script-0-to-2:
+  run-eval-script-2000-to-2100:
     runs-on: ubuntu-latest
 
     steps:
@@ -162,7 +162,7 @@ jobs:
 
       - name: Run eval.py script
         run: |
-          python eval.py --start_count 0 --end_count 2
+          python eval.py --start_count 2000 --end_count 2100
       
       - name: Upload eval logs
         uses: actions/upload-artifact@v4
