@@ -37,12 +37,6 @@ docker run -d -p 5000:5000 --name psl paritoshwhap/prompt-safety-layer
 
 3) Access it through the url:- http://127.0.0.1:4999/
 
-Step-by-step instructions for installation.
-
-```
-# Example command
-pip install my-package
-```
 
 ## Exploratory Data Analysis - Trainset
 The dataset used for this experimentation is [Safe-Guard Prompt Injection Dataset](https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection). It is also available in the data folder of this repo.
