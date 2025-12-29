@@ -158,12 +158,12 @@ It is clear from the evaluation metrics that an untrained agent is performing si
 - Use these examples to inform or calibrate predictions
 
 ### Finetune an LLM
-Finetune a generative LLM with explanations and labels.
+Finetune a generative LLM with explanations and labels. Possibly QWEN.
 
 
 
 ### A hybrid with discriminator LLM and generative LLM
-Discriminator performs classification then generative LLM could be used for providing explanation.
+Discriminator performs classification then generative LLM could be used for providing explanation. Possibly QWEN could help with this.
 
 ### Use a Disciminator like BERT based models
 For pure classification
