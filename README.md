@@ -161,9 +161,8 @@ It is clear from the evaluation metrics that an untrained agent is performing si
 Finetune a generative LLM with explanations and labels. Possibly QWEN.
 
 
-
 ### A hybrid with discriminator LLM and generative LLM
-Discriminator performs classification then generative LLM could be used for providing explanation. Possibly QWEN could help with this.
+Discriminator performs classification then generative LLM could be used for providing explanation. Possibly QWEN could help with this. Since, generation of explanation introduces more latency. It might be ideal to have a discriminator-classifier to first classify the query as safe/unsafe and then have a generator produce explanation
 
 ### Use a Disciminator like BERT based models
 For pure classification
