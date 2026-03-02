@@ -167,6 +167,9 @@ Discriminator performs classification then generative LLM could be used for prov
 ### Use a Disciminator like BERT based models
 For pure classification
 
+### Package
+Prompt Guard:- https://huggingface.co/meta-llama/Prompt-Guard-86M
+
 ### Related Papers
 - StruQ: Defending Against Prompt Injection with Structured Queries.
 - Retrieval-Augmented Generation in Industry: An Interview Study on Use Cases, Requirements, Challenges, and Evaluation.
