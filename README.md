@@ -168,6 +168,5 @@ Discriminator performs classification then generative LLM could be used for prov
 For pure classification
 
 ### Related Papers
-StruQ: Defending Against Prompt Injection with Structured Queries.
-
-Retrieval-Augmented Generation in Industry: An Interview Study on Use Cases, Requirements, Challenges, and Evaluation.
+- StruQ: Defending Against Prompt Injection with Structured Queries.
+- Retrieval-Augmented Generation in Industry: An Interview Study on Use Cases, Requirements, Challenges, and Evaluation.
